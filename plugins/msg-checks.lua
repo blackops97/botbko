@@ -1,4 +1,4 @@
---Begin msg_checks.lua By @SoLiD
+--Begin msg_checks.lua By @TAHAJ20
 local TIME_CHECK = 2
 local function pre_process(msg)
 local data = load_data(_config.moderation.data)
@@ -286,7 +286,7 @@ kick_user(user, chat)
    end
 end
 if msg.media.caption then
-local link_caption = msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.media.caption:match("[Tt].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
+local link_caption = msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.media.caption:match("[Tt].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ee][Ll][e[Ss][Cc][Oo].[Pp][Ee]/")
 if link_caption
 and lock_link == "yes" then
  if is_channel then
@@ -331,7 +331,7 @@ kick_user(user, chat)
       end
    end
 end
-local link_msg = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.text:match("[Tt].[Mm][Ee]/") or msg.text:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
+local link_msg = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.text:match("[Tt].[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][e[Ss][Cc][Oo].[Pp][Ee]/")
 if link_msg
 and lock_link == "yes" then
  if is_channel then
@@ -436,9 +436,9 @@ else
    del_msg(chat, msg.id)
     kick_user(user, chat)
    if not lang then
-  tdcli.sendMessage(chat, msg.id, 0, "_User_ "..user_name.." `[ "..user.." ]` _has been_ *kicked* _because of_ *flooding*", 0, "md")
+  tdcli.sendMessage(chat, msg.id, 0, "🎐| _المستخدم 👤_ ["..user_name.."] \n📝| _الايدي 💫_ *["..data.id_.."]*\n📛|` _has been_ *kicked* _because of_ *flooding*", 0, "md")
    elseif lang then
-  tdcli.sendMessage(chat, msg.id, 0, "_کاربر_ "..user_name.." `[ "..user.." ]` _به دلیل ارسال پیام های مکرر اخراج شد_", 0, "md")
+  tdcli.sendMessage(chat, msg.id, 0, "🎐| _المستخدم 👤_ ["..user_name.."] \n📝| _الايدي 💫_ *["..data.id_.."]*\n📛|_العضو قام بعمل تكرار في المجموعه وتم طرده_", 0, "md")
     end
 redis:setex('sender:'..user..':flood', 30, true)
       end
